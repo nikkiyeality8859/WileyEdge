@@ -36,7 +36,7 @@ public class BankAccount {
 //				}
 //		accountType acc1=accountType.CURRENT;
 //		accountType acc2=accountType.SAVINGS;
-		if(((acc1.equals(accType))&&(openingBalance>=acc1.getminBalance()))||((acc2.equals(acc2))&&(openingBalance>=acc2.getminBalance()))) {
+		if(((acc1.equals(accType))&&(openingBalance>=acc1.getminBalance()))||((acc2.equals(accType))&&(openingBalance>=acc2.getminBalance()))) {
 			this.currentBalance=openingBalance;
 			this.accType=accType;
 			System.out.println("Account of  "+accountHolderName+" is created successfully");

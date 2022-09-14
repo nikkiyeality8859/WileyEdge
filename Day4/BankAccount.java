@@ -111,25 +111,33 @@ public class BankAccount {
 		//user1
 		BankAccount user1=new BankAccount(1,"Kalpit",2000,"SAVINGS");
 		
-        
+        if((user1.accType.equalsIgnoreCase("SAVINGS")&&user1.openingBalance<500)||(user1.accType.equalsIgnoreCase("CURRENT")&&user1.openingBalance<1000)) {
+        	user1=null;
+        }else {
         
 		user1.withdraAmount(500);
 		user1.depositeAmount(2000);
 		System.out.println();
-		
+        }
 		//user2
 		BankAccount user2=new BankAccount(2,"Nikita",22,"SAVINGS");
-		
-		user1.withdraAmount(522);
-		user1.depositeAmount(200);
+		if((user2.accType.equalsIgnoreCase("SAVINGS")&&user2.openingBalance<500)||(user2.accType.equalsIgnoreCase("CURRENT")&&user2.openingBalance<1000)) {
+        	user2=null;
+        }
+		else {
+		user2.withdraAmount(522);
+		user2.depositeAmount(200);
 		System.out.println();
+		}
 		
 		//user3
 		BankAccount user3=new BankAccount(3,"shubh",1000,"CURRENT");
-		//user1.display();
+		if((user3.accType.equalsIgnoreCase("SAVINGS")&&user3.openingBalance<500)||(user3.accType.equalsIgnoreCase("CURRENT")&&user3.openingBalance<1000)) {
+        	user3=null;
+        }else {
 		user3.withdraAmount(5);
 		user3.depositeAmount(2000);
-
+        }
 	}
 
 }

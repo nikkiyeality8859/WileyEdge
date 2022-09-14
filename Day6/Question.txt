@@ -1,0 +1,37 @@
+Day 6 Assignment:
+ 
+1. Write a program to reverse a String 
+2. Create custom/user defined exception to validate the email. 
+Sample output1: 
+Entered email address : mandarmjog@gmail.com
+Your email address is valid.
+Sample output2:
+Entered email address: wiley@g@.com
+Your email address is invalid
+Sample output3:
+Entered email address: .wi@.gmail@1234
+Your email address is invalid
+3.
+4. Write a program to count the occurance of the character in the given String. 
+5. Write a program to test if the first and last element of the array are same. The length of the 
+array must be greater than 5. 
+6. Write a program if the two given strings are anagram or not. 
+7. Create the BankAccount with the following details: 
+Attributes: accountId, accountHolderName, AccountType
+ AccountType be enum contains the types SAVINGS and CURRENT. The enum 
+Should also provide the default interest rate for SAVINGS and CURRENT 
+account. That should be returned from one of the methods from the enum 
+Behaviour: BankAccount should have the method, calculateTotalInterest as shown below:
+calculateTotalInterest(double amount, int years)
+The main class should create object of BankAccount and provide the accounttype. It should 
+later invoke the calculateTotalInterest() by providing arguments. Print the total interest on 
+investments. 
+8. Modify the above BankAccount class by connecting it with DepositAmountException. This 
+exception should be generated if the amount passed in the calculateTotalInterest is not 
+positive. 
+9. Create the Employee class, which should contain the attributes empId, empName. Along 
+with that, it should also contain empAddresses, which is array of address. This should consist 
+of temporary address and permanent address. 
+Write a program to instantiate the employee object and display all the attributes of the 
+same.
+Attributes of address class: flatNumber, flatName, roadName, cityName. 

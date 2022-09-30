@@ -1,0 +1,98 @@
+-- CREATE TABLE Employee (
+--     Employee_id int AUTO_INCREMENT PRIMARY KEY,
+--     First_name VARCHAR(50),
+--     Last_name VARCHAR(50),
+--     Salary int,
+--     Joining_date Date,
+--     Departement  VARCHAR(50) 
+-- );
+-- CREATE TABLE reward (
+--     Employee_ref_id int,
+--     date_reward Date,
+--     amount int,
+--     FOREIGN KEY (Employee_ref_id) REFERENCES Employee(Employee_id)
+-- );
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, Departement) VALUES (1, 'Bob', 'Kinto', 1000000, "2019-01-20", "Finance");
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, Departement) VALUES (2, 'Jerry', 'Kansxo', 6000000, "2019-01-15", "IT");
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, Departement) VALUES (3, 'Philip', 'Jose', 8900000, "2019-02-05", "Banking");
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, Departement) VALUES (4, 'John', 'Abraham', 2000000, "2019-02-25", "Insurance");
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, Departement) VALUES (5, 'Michael', 'Mathew', 2200000, "2019-02-28", "Finance");
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, Departement) VALUES (6, 'Alex', 'chreketo', 4000000, "2019-05-10", "IT");
+-- INSERT INTO Employee (Employee_id, First_name, Last_name, Salary, Joining_date, Departement) VALUES (7, 'Yohan', 'Soso', 1230000, "2019-06-20", "Banking");
+
+-- INSERT INTO reward (Employee_ref_id, date_reward, amount) VALUES (1, '2019-05-11', '1000');
+-- INSERT INTO reward (Employee_ref_id, date_reward, amount) VALUES (2, '2019-02-15', '5000');
+-- INSERT INTO reward (Employee_ref_id, date_reward, amount) VALUES (3, '2019-04-22', '2000');
+-- INSERT INTO reward (Employee_ref_id, date_reward, amount) VALUES (1, '2019-06-20', '8000');
+
+-- 1. Get all the employees
+-- select * from employee;
+
+-- 2. Display the firstname and the last name of all employees
+-- select first_name,last_name from employee;
+
+-- 3. Display all the values of the "First_Name" column using the alias "Employee Name"
+-- select first_name as Employee_Name from employee;
+
+-- 4. Get all "Last_Name in lowercase
+-- select lower(last_name) from employee;
+
+-- 5. Get all the Last_Name in upper case
+-- select upper(last_name) from employee;
+
+-- 6.Get unique "Department"
+-- select  distinct(Departement) from employee;
+
+-- 7. Get the first 4 characters of "First_Name" column
+-- select substring(first_name ,1,4) from employee;
+
+-- -- 8. Get the position of the letter 'h' in 'John'
+--  SELECT position('h' IN first_name) FROM Employee WHERE first_name LIKE 'John'
+
+-- 9. Get all the values from the "First_Name" column after removing white space on the right
+-- select RTRIM(first_name)from employee;
+
+-- 10.Get all the values from the "First_Name" column after removing white space on the left
+-- select ltrim(first_name)from employee;
+
+-- 11.Get the length of the text in the "First_Name" column
+-- select length(first_name)from employee;
+
+-- 12.Get the employee's first name after replacing 'o' with '#'
+-- select replace(first_name,'o','#') from employee;
+
+-- 13.Get the year, month and day from the "joining_date" column
+-- select year(joining_date),month(joining_date),date(joining_date) from employee;
+
+-- 14.Get all the employees in ascending order by first name 
+-- select first_name from employee order by first_name asc ;
+
+-- 15.Get all employees in the descending order by firstname
+-- select first_name from employee order by first_name desc ;
+
+-- 16.Get all employees in the ascending order by firstname and descending order by salary
+-- select * from employee order by first_name asc,salary desc;
+
+-- 17.Get employees whose firstname is "Bob"
+-- select * from employee where first_name="bob";
+
+-- 18.Get employees whose firstname is "Bob" or"Alex"
+ -- select * from employee where first_name IN("bob","alex");
+
+-- 19.Get employees whose first name is neither "Bob" nor "Alex"
+-- select * from employee where first_name not IN("bob","alex");
+
+-- 20.Get all the details about employees whose firstname begins with 'J' and contains 4 letters.
+-- select * from employee where first_name like 'j%'and  length(first_name)=4;
+
+-- 21.Get all the details of employee whose participation month(joining_date) is "January"
+-- select * from employee where monthname(joining_date)='January';
+
+-- 22.Get all the details of the employees who joined before March 1, 2019
+-- select * from employee where joining_date <('2019-3-1');
+
+-- 23.Get the difference betwen the "Joining_Date" and "date_reward" column
+SELECT
+  first_name,
+  DATEDIFF( date_reward,joining_date) AS days
+FROM employee join reward;
